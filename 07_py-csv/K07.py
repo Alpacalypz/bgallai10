@@ -1,8 +1,41 @@
-def csv_format(csv, dictionary):
-    in_stream = open(csv)
-    jobs = in_stream.read()
-    in_stream.close()
+import random
+def csv_format(csv):
+    with open(csv, 'r') as in_stream:
+        ls = in_stream.read()
 
-    jobs = jobs.split('\n')
+    ls = ls.split('\n')
 
-    for j in jobs    
+    for i in range(len(ls)):
+        if ls[i] == '':
+            ls.pop(i)
+
+    return ls
+
+def randomOccupation(dictionary):
+    percentageSum = sum(dictionary.values())
+    percentageRandom = random.random() * percentageSum
+    percentageIndex = 0
+    for key in dictionary:
+        if percentageIndex + dictionary[key] > percentageRandom:
+            return key
+        else:
+            percentageIndex += dictionary[key]
+
+if __name__ == "__main__":
+        inp = "y"
+        jobs = csv_format("occupations.csv")
+        jdict = {}
+
+        del jobs[0]
+        del jobs[-1]
+        for i in jobs:
+            if '"' not in i:
+                cur = i.split(",")
+            else:
+                cur = i[1:].split('",')
+
+            jdict[cur[0]] = float(cur[1])
+
+        while inp == "y":
+                print(randomOccupation(jdict))
+                inp = str(input("Next Occupation? (y/n)")).lower()
