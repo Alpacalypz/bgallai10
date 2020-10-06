@@ -1,0 +1,20 @@
+William Li, Benjamin Gallai, Jason Chan
+SoftDev
+K08 -- Task Alpha
+2020-10-05
+
+
+Questions:
+
+What does print(f" ... ") do?
+Where in karl's code does he choose randomly using the percentages?
+In almost every code I see people setting the dictionary value to the percentage but never the occupation, why?
+Reoccuring word weights? What does it do/significance?
+Why do some people use from ____ import ____, why not just import the whole module?
+Concerns:
+
+His code will not work because he opens "occupations.csv", but the only other file in the same directory is occupations.csv.txt".
+
+Comments:
+I see that the 2 main ideas used were either the use of "weight" or the <= operator, I don't think i have seen both in the same file
+I (Jason) should try to remember that random.choice is a thing and not stick to just random.randint for everything

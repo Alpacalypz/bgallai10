@@ -1,0 +1,9 @@
+Team Glasses - William Li, Benjamin Gallai, Jason Chan
+SoftDev
+K08 -- Task Beta
+2020-10-05
+
+$ python3 -m venv ~/myherozero
+
+This command creates a virtual evironment at the folder myherozero, with the subfolders Scripts containing the python excecutable,
+and another subfolder Lib/site-packages
