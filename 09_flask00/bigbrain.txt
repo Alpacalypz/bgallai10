@@ -1,0 +1,14 @@
+Benjamin Gallai
+SoftDev
+K09 -- Simple Path to Greatness / Flask / Making our first flask app in a python venv
+2020-10-07
+
+0) it looks like java object creation
+1) file / directory delimiter
+2) prints the value of __name__
+3a) prints to terminal?
+3b) No, because hello_world() isn't run in this code. 
+4) Other than the <varaiable>.<method>() in both python and java, no. 
+
+New Things Learned:
+Flask app is some kind of server. 
