@@ -1,18 +1,50 @@
+# Team Glasses -- *Benjamin Gallai, Jason Chan, William Li
+# SoftDev -- Rona Ed.
+# K10 -- Putting Little Pieces Together/Flask Intro/Send output of occupation chooser to webpage
+# 2020-10-13
+
 import random, csv
 
-def jobGetter(dict):
-    x=random.uniform(0,float(dict["Total"]))
-    for key, value in dict.items():
+from flask import Flask
+app = Flask(__name__) #create instance of class Flask
+
+JobClass = {}
+occupations = ""
+with open("occupations.csv") as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    for row in csv_reader:
+        JobClass[row[0]] = row[1]
+        occupations += row[0] + "<br>"
+JobClass.pop("Job Class")
+occupations = occupations[13:]
+
+@app.route("/")       #assign fxn to route
+def jobGetter():
+    retStr = """Team Glasses -- *Benjamin Gallai, Jason Chan, William Li <br>
+SoftDev -- Rona Ed. <br>
+K10 -- Putting Little Pieces Together/Flask Intro/Send output of occupation chooser to webpage <br>
+2020-10-13"""
+
+    retStr += "<br><br> Your Occupation: "
+
+    x=random.uniform(0,float(JobClass["Total"]))
+    for key, value in JobClass.items():
         x=x-float(value)
         if x<=0:
-            return key
-    return "Invalid"
+            retStr += key
+            break
+    retStr += "Invalid"
+    
+    retStr += "<br><br> All Occupations: "
+    
+    retStr += "<br><br>" + occupations
+    
+    return retStr
 
-if __name__ == "__main__":
-    JobClass = {}
-    with open("occupations.csv") as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=',')
-        for row in csv_reader:
-            JobClass[row[0]] = row[1]
-    JobClass.pop("Job Class")
-    print(jobGetter(JobClass))
+if __name__ == "__main__":  # true if this file NOT imported
+    app.debug = True        # enable auto-reload upon code change
+    app.run()
+
+#no change from v3. if app.py is imported like a library, you don't want it to run (you just need the variables and functions it defines), so don't do app.run(), or change app.debug
+
+#how do we use jobGetter if it has parameters? (tried passing a parameter to app.run(), didn't work
