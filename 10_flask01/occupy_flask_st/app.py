@@ -16,7 +16,7 @@ with open("occupations.csv") as csv_file:
         JobClass[row[0]] = row[1]
         occupations += row[0] + "<br>"
 JobClass.pop("Job Class")
-occupations = occupations[13:]
+occupations = occupations[13:-10]
 
 @app.route("/")       #assign fxn to route
 def jobGetter():
