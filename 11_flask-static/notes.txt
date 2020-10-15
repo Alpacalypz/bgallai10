@@ -1,0 +1,8 @@
+Benjamin Gallai
+SoftDev
+K12
+2020-10-14
+
+- static is in the same directory as app.py
+- When accessing http://localhost:5000/static/foo, it prompts a download of foo; but if you change the filename to foo.txt, and then go to https://localhost:5000/static/foo.txt, it shows up in browser. Probably the browser only knows to display the plaintext with the file ending. 
+- When accessing http://localhost:5000/static/foo.html, it shows "this here some plaintext tho" (which is a lie) with default formatting. Also the comment in foo.html isn't shown. 

@@ -1,0 +1,16 @@
+Benjamin Gallai
+SoftDev
+K12
+2020-10-14
+
+Answers to app.py questions:
+
+0) the call to render_template in the test_tmplt method would return an error. 
+1) Jason: http://localhost:5000/my_foist_template
+   Benjamin: http://localhost:5000/my_foist_template/templates/model_tmplt.html
+   William: http://localhost:5000/model_tmplt.html
+2) passed as arguments to model_tmplt.html
+
+Notes: 
+
+Jason was right. 
