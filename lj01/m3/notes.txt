@@ -1,0 +1,62 @@
+Team BLOKS (Stella Oh, Liam Kronman, Benjamin Gallai)
+SoftDev
+LJ01 -- MongoDB Ch 3
+2020-11-12
+
+INSERTING NEW DOCUMENTS:
+0. navigate to collection in Atlas
+1. Hit the insert document button
+
+_id: why is it important
+* unique identifier for a document in a collection
+* Every document must have a unique _id value
+* identical documents can exist in same collection as long as
+  their _id values are different
+
+ObjectID(): default value for the _id field unless otherwise specified
+
+INSERTING NEW DOCUMENTS IN SHELL:
+0. connect to Atlas cluster
+1. navigate to database we need
+        use <databse_name>
+3. Insert new document into collection
+
+INSERTING DOCUMENTS: ORDER
+0. insert multiple documents by embedding them in an array:
+    db.collection.insert([{<doc1>}, {<doc2>}])
+1. use {"ordered": false} to disable the default ordered insert
+   and to ensure all documents are added except duplicates
+
+Collections and databases are created when they are being used:
+  $ use tools
+  followed by
+  & db.tractors.insert({<tractor doc>})
+  creates the tools.tractors namespace
+
+UPDATING DOCUMENTS:
+0. select the edit button that looks like a pencil
+
+UPDATING DOCUMENTS IN SHELL:
+* updateOne() updates first document that matches query
+    * When using a One function, use "_id" to make sure you are
+      targeting the righ tdocument
+* updateMany() updates all documents that matches query
+
+UPDATE OPERATORS
+$inc increments field(s) by specified amount(s):
+    { "$inc": {<field1>": <incrememnt value>, ...}}
+$set sets field value(s) to a new specified value(s):
+    { "$set": {"<field1>": <new value>, ...}}
+$push adds element(s) to an array field:
+    { "$push": { <field1>: <value1>,...}}
+
+DELETING:
+* use trashcan icon to delete documents in Atlas
+* deleteOne() removes the first document that matches the query
+* deleteMany() deletes all documents that match the given query
+* db.<collection>.drop() deletes the given collection
+* once you delete data it is GONE
+* removing all collections in a databse removes the database
+
+
+
