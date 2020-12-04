@@ -1,0 +1,88 @@
+Team BLOKS (Stella Oh, Liam Kronman, Benjamin Gallai)
+SoftDev
+LJ01 -- MongoDB Ch 4
+2020-11-12
+
+QUERY OPERATORS: UPDATE
+* Update operators enable us to modify data in the databse
+$unset undos $set
+
+DOLLAR SIGN SYMBOL $ USES:
+* $ denotes the use of an operate
+* $ addresses the field value
+* precedes aggregation pipeline stages
+
+QUERY OPERATORS: COMPARISON
+* Comparison operators allow us to find data within a certain range
+    {<field>: { <operator>: <value> }}
+* Syntax for comparison operators using aggregation
+    { <operator>: {<field>,<value>}}
+* $eq used as the default operator when an operator is not specified
+$eq = EQual to
+$neq = Not EQual to
+$gt > Greater Than
+$lt < Less Than
+$gte >= Greater Than or Equal to
+$lte <= Less Than or Equal to
+
+QUERY OPERATORS: LOGIC
+* logic operators allow us to be more granular in our search for data
+    { "$<operators>": [{ <clause1> }, { <clause2> },...]}
+$and returns docs that Match ALL of the specified query clauses
+$or returns docs as long as AT LEAST ONE of the query clauses is matched
+$nor returns all docs that FAIL TO MATCH both given clauses
+$not NEGATES the query requirements and returns all docs that don't match the query
+    {$not: {<clause>}}
+
+Implicit $and
+* used as the default operator when an operator is not specified
+Explicit $and
+* use it when you need to include the same operator more than once in a query
+
+EXPRESSIVE QUERY OPERATOR $EXPR
+* $expr allows the use of aggregation expressions within the query language
+    { $expr: { <expression> } }
+* allows us to use variables and conditional statements
+* allows for more complex queries and for comparing fields within a doc
+
+ARRAY OPERATORS
+$push allows us to add an element to an array
+                        OR
+      turns a field into an array field if it was previously a different type
+$size returns a cursor with all docs where the specified array field is exactly the given length
+    {<array field> : { "$size": <number>}}
+$all returns a cursor with all docs in which the specified array field contains
+     all the given elements regardless of their order in the array
+    {<array field> : { "$all": <array>}}
+Querying an array field using
+* an array returns only exact array matches unless specified otherwise
+* a single element will return all documents where the specified array field
+  contains this given element
+
+ARRAY OPERATORS AND PROJECTION
+* A projection allows us to specify which fields should or shouldn't be included in the result cursor
+    db.<collection>.find({ <query> }, { <projection> })
+* 1-include the field, 0-exclude the field
+* Use only 1s or only 0s, except for specifically excluding the id value
+
+Examples:
+    db.<collection>.find({ <query> }, { <field>: 1, <field2>: 1})
+    db.<collection>.find({ <query> }, { <field>: 0, <field2>: 0})
+    db.<collection>.find({ <query> }, { <field>: 1, "_id": 0})
+    
+$elemMatch matches docs that contain an array field with at least one element
+           that matches the specified query criteria
+                            or
+           projects only the array elements with at least one element
+           that matches the specified criteria
+    {<field> : { "$elemMatch": {<field>: <value> }}}
+
+QUERYING ARRAYS AND SUB-DOCS
+* MQL uses dot-notation to specify the address of nested elements in a doc
+* To use dot-notation in arrays specify the position of the element in the array
+    db.collection.find({"field 1.other field.also a field": "value"})
+
+
+
+
+
