@@ -21,4 +21,8 @@ The key's randomart image is:
 |       ..        |
 +----[SHA256]-----+
 
+Public ssh Key Content: 
+
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC7QxXmUA214h1toy+HaGBWQC2LqRj00b7WH3W3epe0OWVnTwmPF7WmcYGyrUbAwOetIdW0yTcksFeQcKS+IiZqNymOvsTQKTXZRRKK01FzuH8/w37LFHOf9zHqt3dAXCXKe8PlP5jw97YcX5iUMWp9nfyP6ynIYdOmeRaSHwzZCpFkGGIwJolMi/DuxWqIIXfnITfip8ycwz2+BfGkNoUTYj4uZsIbICPcgmrAS/BrZIQIbH5OOZONMgNvOlkuGheInu6OclsjXAYZ6mNcUas8+sILFB0V7AtivR4tuJpqYpVYZPLC6bTGj5gYc2azBncMxB/Z9zkrDLLDo0CD3MfVf0eHxQl5dgZn1BNCVhc4e/BW8iKHmdqa9xKv4tgUwOBB1Z7078Tgox08hmG2qsGRZwcYClo5Vf+frai5enurxtajD79fxizcGdWzQZpiX8eR9wU796J53bXTnnGaKEm6DnoWJ/0jhx0myg7DsT4DDWjIbNoFsWe1D1Zm9EYXJh0= alpacalypz@alpacalypz-VirtualBox
+
+Key Name: key0
