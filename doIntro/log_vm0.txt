@@ -28,3 +28,6 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC7QxXmUA214h1toy+HaGBWQC2LqRj00b7WH3W3epe0
 Key Name: key0
 
 Droplet Name: droplet0
+
+sudo user name: bowl
+bowl password: watchthishockeystick
